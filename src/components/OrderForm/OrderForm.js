@@ -30,8 +30,11 @@ class OrderForm extends Component {
       name: nameInput,
       ingredients: ingredientsInput
     }
-    postOrder(nameInput, ingredientsInput)
-    console.log(newOrder)
+    if (nameInput.length > 0 && ingredientsInput.length > 0) {
+      postOrder(nameInput, ingredientsInput)
+    } else {
+      alert('please enter an input')
+    }
     this.clearInputs();
   }
 
