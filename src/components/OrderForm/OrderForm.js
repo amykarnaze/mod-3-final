@@ -31,6 +31,7 @@ class OrderForm extends Component {
       ingredients: ingredientsInput
     }
     if (nameInput.length > 0 && ingredientsInput.length > 0) {
+      this.props.addOrder(newOrder)
       postOrder(nameInput, ingredientsInput)
     } else {
       alert('please enter an input')
