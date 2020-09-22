@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {getOrders} from '../../apiCalls';
+import {getOrders, postOrder} from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
@@ -18,6 +18,12 @@ class App extends Component {
       .then(data => this.setState({orders: data.orders}))
       .catch(err => console.error('Error fetching:', err));
   }
+  // addOrder = (nameInput, ingredients) => {
+  //   postOrder(nameInput, ingredients)
+	//   .then(data => this.setState({ orders: [...this.state.orders, data] })
+	// 	.catch(err => console.log(err))
+	// }
+  // }
   addOrder = (newOrder) => {
     this.setState({
       orders: [...this.state.orders, newOrder]
@@ -25,7 +31,6 @@ class App extends Component {
   }
 
   deleteOrder = (id) => {
-    console.log(id)
     const filteredOrders = this.state.orders.filter(order => order.id !== id)
     this.setState({ orders: filteredOrders})
   }

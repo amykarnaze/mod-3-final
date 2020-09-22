@@ -101,9 +101,14 @@ describe('Search Component', () => {
 
     fireEvent.click(submitButton)
 
-    expect(nameOrder).toBeInTheDocument()
+    // expect(addIdea).thoHaveBeenCalledWith('name: 'Alex')
+    // expect(nameOrder).toBeInTheDocument()
     expect(sofritas).toBeInTheDocument()
     expect(quesoFresco).toBeInTheDocument()
+
+    //query list element? 
+    // name on card by test or heading w name or order
+    // list elements element// something about card 
     
   })
 
